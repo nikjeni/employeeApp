@@ -19,14 +19,12 @@ export class AddEmployeeComponent implements OnInit {
       address2: [''],
       postalcode: ['']
     })
-    console.log('asda', this.employeeForm);
   }
   ngOnInit(): void {
   }
 
   submit() {
     let id = 0;
-    console.log(this.employeeForm.value);
     let obj = {
       id: this.service.dummyData.data.length + 1, name: this.employeeForm.get('name').value, phone: this.employeeForm.get('phone').value, 'address': {
         'city': this.employeeForm.get('city').value, 'address_line1': this.employeeForm.get('address1').value,
