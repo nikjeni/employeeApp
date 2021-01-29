@@ -1,0 +1,25 @@
+<button (click)="addEmployee()">Add New</button>&nbsp;&nbsp;
+<input type="text" placeholder="search" [formControl]="searchInput">
+<br><br>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Phone</th>
+        <th>City</th>
+        <th>Address 1</th>
+        <th>Address 2</th>
+        <th>Postal Code</th>
+        <th>Edit</th>
+    </tr>
+    <tr *ngFor="let employee of employeeData">
+        <td>{{employee.id}}</td>
+        <td>{{employee.name}}</td>
+        <td>{{employee.phone | replaceStringWithNa}}</td>
+        <td>{{employee.address.city}}</td>
+        <td>{{employee.address.address_line1}}</td>
+        <td>{{employee.address.address_line2}}</td>
+        <td>{{employee.address.postal_code}}</td>
+        <td><button (click)=editEmployee(employee)>Edit</button></td>
+    </tr>
+</table>

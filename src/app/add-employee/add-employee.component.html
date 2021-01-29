@@ -1,0 +1,25 @@
+<div>
+    <form [formGroup]="employeeForm">
+        <label for="Employee Name">Employee Name </label>
+        <input type="text" placeholder="Employee Name" formControlName="name">
+        <span style="color: red;" *ngIf="employeeForm.get('name').errors?.required">Name is required</span><br>
+
+        <label for="phone">Phone</label>
+        <input type="text" placeholder="Phone" formControlName="phone">
+        <span style="color: red;" *ngIf="employeeForm.get('phone').errors?.required">Number is required</span><br>
+
+        <label for="city">City</label>
+        <input type="text" placeholder="City" formControlName="city">
+
+        <label for="address1">Address 1</label>
+        <input type="text" placeholder="Address 1" formControlName="address1">
+
+        <label for="address2">Address 2</label>
+        <input type="text" placeholder="Address 2" formControlName="address2">
+
+        <label for="postal code">Postal Code</label>
+        <input type="text" placeholder="Postal Code" formControlName="postalcode">
+
+        <button (click)="submit()" [disabled]="employeeForm.invalid">Save</button>
+    </form>
+</div>
